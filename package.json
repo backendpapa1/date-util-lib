@@ -1,0 +1,27 @@
+{
+  "name": "date-utils-lib",
+  "version": "1.0.0",
+  "description": "A lightweight date utility library",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "exports":{
+    ".":{
+      "import": "./dist/index.esm.js",
+      "require": "./dist/index.cjs.js"
+    }
+  },
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w"
+  },
+  "keywords": [],
+  "author": "Akeju Paul",
+  "license": "MIT",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^29.0.0",
+    "@rollup/plugin-node-resolve": "^16.0.3",
+    "@rollup/plugin-terser": "^0.4.4",
+    "rollup": "^4.53.1"
+  },
+  "files": ["dist"]
+}
