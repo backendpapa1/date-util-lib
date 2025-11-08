@@ -2,9 +2,10 @@ import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
 import terser from "@rollup/plugin-terser";
 import { defineConfig } from "rollup";
+import typescript from "@rollup/plugin-typescript";
 
 export default defineConfig({
-  input: "src/index.js",
+  input: "src/index.ts",
   output: [
     {
       format: "cjs",
@@ -17,5 +18,13 @@ export default defineConfig({
       sourcemap: true,
     },
   ],
-  plugins:[resolve(),commonjs(),terser()]
+  plugins: [
+    resolve(),
+    commonjs(),
+    terser(),
+    typescript({
+      declaration: true,
+      declarationDir: "dist",
+    }),
+  ],
 });
